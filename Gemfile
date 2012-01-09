@@ -6,7 +6,6 @@ gem 'haml'
 gem 'sass'
 gem 'compass'
 gem 'sequel'
-gem 'coffee-script'
 gem 'oauth'
 gem 'twitter'
 

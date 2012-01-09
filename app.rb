@@ -8,7 +8,6 @@ require 'sass'
 require 'pp'
 require './model/quiz'
 require 'compass' 
-require 'coffee-script'
 
 configure do
   use Rack::Session::Cookie, :secret => SecureRandom.hex(32)
