@@ -7,6 +7,8 @@ gem 'sass'
 gem 'compass'
 gem 'sequel'
 gem 'coffee-script'
+require 'oauth'
+require 'twitter'
 
 group :test, :development do
   gem 'sqlite3'
