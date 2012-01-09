@@ -1,0 +1,9 @@
+- if answ == :corr then
+  %p 正解！
+- else
+  %p はずれ！
+= h @quiz.description
+
+
+- if @twitter then
+  %a{href: "/tw/#{no}"}このクイズをtweetする

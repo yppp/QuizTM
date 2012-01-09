@@ -1,0 +1,48 @@
+%p twitterのアカウントでクイズがつくれます！
+- if @twitter
+  %form{:method => "POST", :action => '/quizpost'}
+    %input{:type => "hidden", :name => "_method", :value => "PUT"}
+    %table
+      %tr
+        %td クイズ!
+        %td
+          %textarea{:name => "sentence", :cols => 60, :rows => 8, :id => "sentence"}
+      %tr
+        %td 答え
+        %td
+          %input{name: "correct", type: "text"}
+      %tr
+        %td 回答後に出る説明
+        %td
+          %textarea{name: "description", :cols => 60, :rows => 8}
+      %tr
+        %td ダミーの選択肢1
+        %td
+          %input{name: "wrong", type: "text"}
+      %tr
+        %td ダミーの選択肢2
+        %td
+          %input{name: "wrong2", :type => "text"}
+      %tr
+        %td ダミーの選択肢3
+        %td
+          %input{name: "wrong3", :type => "text"}
+      %tr
+        %td このクイズをtwitterに書きこむ？ 
+        %td
+          %input{name: "istweet", type: "checkbox"}
+      %tr
+        %td 
+        %td
+          %input{:type => "submit", id: "mit"}
+- else
+  %form{method: "GET", action: "/request_token"}
+    %input{type: "submit", value: "認証する"}
+
+%p みんなのクイズ
+- @quiz.reverse.each.with_index do |q,i| 
+  -  break if i == 5
+  %p
+    %a{href: "/quiz/#{q.id}"}= h q.formatted_sentence
+    %a{href: "http://twitter.com/#{Twitter.user(q.auther_id).name}"}= "@#{h Twitter.user(q.auther_id).name}"
+    %img{src: "#{Twitter.user(q.auther_id).profile_image_url}", width: "40px", hight: "40px"}

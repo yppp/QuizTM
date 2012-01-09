@@ -1,0 +1,14 @@
+%form{method: "post", action: "/ans"}
+  %table
+    %tr
+      %td 
+        = h @quiz.sentence
+        %input{type: "hidden", value: @quiz.id, name: "qid"}
+    - @ans.each do |i|
+      %tr
+        %td
+          %input{type: "radio", value: h(i), name: "ans"}
+            =h i
+    %tr
+      %td
+        %input{type: "submit"}

@@ -1,0 +1,108 @@
+@import "compass";
+
+body {
+  background-color: #80b1d6;
+  @include filter-gradient(#80b1d6, #9ab5ce, vertical);
+  @include background-image(linear-gradient(top, #80b1d6 5%, #9ab5ce 20%)); }
+
+img {
+  margin-left: auto;
+  margin-right: auto; }
+
+.m {
+  width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white; }
+
+form {
+  border: 1px solid #167ee0;
+  margin: 1em;
+  padding: 0.5em; }
+
+.comment {
+  border: 1px solid #167ee0;
+  margin: 1em;
+  padding: 0.5em;
+  .info {
+    border-left: 5px solid #167ee0;
+    border-bottom: 1px solid #167ee0;
+    h2 {
+      text-shadow: 1px 1px #b2b2b2;
+      margin: 0px;
+      margin-left: 5px;
+      font-size: medium; }
+    span.auther {
+      margin-left: auto;
+      padding-left: 0.5em;
+      font-size: small; }
+    span.date {
+      font-size: small; } }
+  .message {
+    margin-top: 1em; } }
+
+.cl {
+  clear: both; }
+
+.pagi {
+  mergin: 1em; }
+
+ul {
+  width: 275px;
+  border: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0; }
+
+#pagination-flickr {
+  li {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 11px;
+    list-style: none;
+    margin-right: 2px; }
+  a {
+    border: solid 1px #9aafe5;
+    margin-right: 2px; }
+  .previous-off, .next-off {
+    color: #dedede;
+    display: block;
+    float: left;
+    font-weight: bold;
+    margin-right: 2px;
+    padding: 3px 4px; }
+  .next a, .previous a {
+    font-weight: bold; }
+  .active {
+    background: #0f3e7a;
+    color: white;
+    font-weight: bold;
+    display: block;
+    float: left;
+    padding: 4px 6px; }
+  a:link, a:visited {
+    color: #0e509e;
+    display: block;
+    float: left;
+    padding: 3px 6px;
+    text-decoration: none; }
+  a:hover {
+    border: solid 1px #0e509e; } }
+
+h3 {
+  background-color: #c7f0f5;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: medium; }
+
+.side {
+  background-color: #ecfafc;
+  width: 100px;
+  color: black;
+  a {
+    p {
+      color: black;
+      font-size: medium;
+      margin: 0; } } }
