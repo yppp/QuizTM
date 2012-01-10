@@ -1,4 +1,4 @@
-
+# cofing:utf-8
 require 'sinatra'
 require 'oauth'
 require 'twitter'
@@ -10,7 +10,7 @@ require './model/quiz'
 require 'compass' 
 
 configure do
-  use Rack::Session::Cookie, key: 'rack.session', domain: 'quiztm.heroku.com', path: '/', expire_afte: 60*60*24*14, secret: SecureRandom.hex(32)
+  use Rack::Session::Cookie, secret: SecureRandom.hex(32)
   Compass.configuration do |config|
     config.project_path = File.dirname(__FILE__)
     config.sass_dir = 'views'
@@ -101,7 +101,8 @@ put '/quizpost' do
              wrong_ans3: request[:wrong3],
              posted_date: Time::now
            })
-  @twitter.update("#{request[:sentence]} / QuizTwitMaker http://quiztm.heroku.com/quiz/#{@quiz}")
+
+  @twitter.update("#{request[:sentence]} / QuizTwitMaker http://quiztm.heroku.com/quiz/#{@quiz}") if request[:istweet]
   redirect '/'
 end
 
