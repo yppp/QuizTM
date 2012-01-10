@@ -7,7 +7,7 @@ gem 'sass'
 gem 'compass'
 gem 'sequel'
 gem 'oauth'
-gem 'twitter'
+gem 'twitter', '1.1.1'
 
 group :test, :development do
   gem 'sqlite3'
