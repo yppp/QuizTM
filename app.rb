@@ -10,7 +10,9 @@ require './model/quiz'
 require 'compass' 
 
 configure do
-  use Rack::Session::Cookie, secret: SecureRandom.hex(32)
+  use Rack::Session::Cookie,
+  secret: SecureRandom.hex(32)
+
   Compass.configuration do |config|
     config.project_path = File.dirname(__FILE__)
     config.sass_dir = 'views'
