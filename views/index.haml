@@ -45,5 +45,6 @@
   - break if i == 5
   %p
     %a{href: "/quiz/#{q.id}"}= h q.formatted_sentence
+    %p= "#{q.auther_id}"
 - #    %a{href: "http://twitter.com/#{Twitter.user(q.auther_id).name}"}= "@#{h Twitter.user(q.auther_id).name}"
 - #    %img{src: "#{Twitter.user(q.auther_id).profile_image_url}", width: "40px", hight: "40px"}
