@@ -12,7 +12,7 @@ class Quiz < Sequel::Model
   unless table_exists?
     set_schema do
       primary_key :id
-      BigNum :auther_id
+      Integer :auther_id
       text :sentence
       text :description
       String :correct_answer
