@@ -94,7 +94,7 @@ end
 
 put '/quizpost' do
   @quiz = Quiz.insert({
-             auther_id: @twitter.verify_credentials.id_str,
+             auther_id: @twitter.verify_credentials.id,
              sentence: request[:sentence],
              description: request[:description],
              correct_answer: request[:correct],
